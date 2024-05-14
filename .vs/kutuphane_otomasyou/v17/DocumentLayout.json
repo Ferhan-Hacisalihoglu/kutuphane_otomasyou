@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Projects\\C#\\kutuphane_otomasyou\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{43AE6D20-19B4-4F60-803E-49582E193CB5}|kutuphane_otomasyou\\kutuphane_otomasyou.csproj|c:\\projects\\c#\\kutuphane_otomasyou\\kutuphane_otomasyou\\controllers\\eklesilcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{43AE6D20-19B4-4F60-803E-49582E193CB5}|kutuphane_otomasyou\\kutuphane_otomasyou.csproj|solutionrelative:kutuphane_otomasyou\\controllers\\eklesilcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{43AE6D20-19B4-4F60-803E-49582E193CB5}|kutuphane_otomasyou\\kutuphane_otomasyou.csproj|c:\\projects\\c#\\kutuphane_otomasyou\\kutuphane_otomasyou\\views\\eklesil\\duzenle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{43AE6D20-19B4-4F60-803E-49582E193CB5}|kutuphane_otomasyou\\kutuphane_otomasyou.csproj|solutionrelative:kutuphane_otomasyou\\views\\eklesil\\duzenle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{43AE6D20-19B4-4F60-803E-49582E193CB5}|kutuphane_otomasyou\\kutuphane_otomasyou.csproj|C:\\Projects\\C#\\kutuphane_otomasyou\\kutuphane_otomasyou\\views\\eklesil\\duzenle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{43AE6D20-19B4-4F60-803E-49582E193CB5}|kutuphane_otomasyou\\kutuphane_otomasyou.csproj|solutionrelative:kutuphane_otomasyou\\views\\eklesil\\duzenle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{43AE6D20-19B4-4F60-803E-49582E193CB5}|kutuphane_otomasyou\\kutuphane_otomasyou.csproj|C:\\Projects\\C#\\kutuphane_otomasyou\\kutuphane_otomasyou\\controllers\\eklesilcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43AE6D20-19B4-4F60-803E-49582E193CB5}|kutuphane_otomasyou\\kutuphane_otomasyou.csproj|solutionrelative:kutuphane_otomasyou\\controllers\\eklesilcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{43AE6D20-19B4-4F60-803E-49582E193CB5}|kutuphane_otomasyou\\kutuphane_otomasyou.csproj|C:\\Projects\\C#\\kutuphane_otomasyou\\kutuphane_otomasyou\\views\\eklesil\\ekle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -146,7 +146,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
@@ -162,29 +162,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "duzenle.cshtml",
               "DocumentMoniker": "C:\\Projects\\C#\\kutuphane_otomasyou\\kutuphane_otomasyou\\Views\\EkleSil\\duzenle.cshtml",
               "RelativeDocumentMoniker": "kutuphane_otomasyou\\Views\\EkleSil\\duzenle.cshtml",
               "ToolTip": "C:\\Projects\\C#\\kutuphane_otomasyou\\kutuphane_otomasyou\\Views\\EkleSil\\duzenle.cshtml",
               "RelativeToolTip": "kutuphane_otomasyou\\Views\\EkleSil\\duzenle.cshtml",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAwAAACRAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABMAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-05-14T11:51:06.694Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "EkleSilController.cs",
               "DocumentMoniker": "C:\\Projects\\C#\\kutuphane_otomasyou\\kutuphane_otomasyou\\Controllers\\EkleSilController.cs",
               "RelativeDocumentMoniker": "kutuphane_otomasyou\\Controllers\\EkleSilController.cs",
               "ToolTip": "C:\\Projects\\C#\\kutuphane_otomasyou\\kutuphane_otomasyou\\Controllers\\EkleSilController.cs",
               "RelativeToolTip": "kutuphane_otomasyou\\Controllers\\EkleSilController.cs",
-              "ViewState": "AQIAADQAAAAAAAAAAAAAAEcAAAAUAAAA",
+              "ViewState": "AQIAADQAAAAAAAAAAAAAAEEAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-30T18:02:27.155Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-30T18:02:27.155Z"
             },
             {
               "$type": "Document",
