@@ -84,16 +84,16 @@ namespace kutuphane_otomasyou.Controllers
         }
 
         [Authorize,HttpGet]
-        public ActionResult duzenle(string Kitapismi)
+        public ActionResult duzenle(int? kitapID)
         {
             if (Session["gizli"] != null)
             {
                 Kitap kitap = null;
 
-                if (Kitapismi != null)
+                if (kitapID != null)
                 {
                     databaseContextcs db = new databaseContextcs();
-                    kitap = db.kitaptablosu.Where(x => x.kitap_adi == Kitapismi).FirstOrDefault();
+                    kitap = db.kitaptablosu.Where(x => x.Id == kitapID).FirstOrDefault();
                 }
 
                 return View(kitap);
@@ -105,16 +105,16 @@ namespace kutuphane_otomasyou.Controllers
         }
 
         [Authorize,HttpPost]
-        public ActionResult duzenle(Kitap model,string Kitapismi)
+        public ActionResult duzenle(Kitap model,int? kitapID)
         {
             if (Session["gizli"] != null)
             {
                 Kitap kitap = null;
 
-                if (Kitapismi != null && model != null)
+                if (kitapID != null && model != null)
                 {
                     databaseContextcs db = new databaseContextcs();
-                    kitap = db.kitaptablosu.Where(x => x.kitap_adi == Kitapismi).FirstOrDefault();
+                    kitap = db.kitaptablosu.Where(x => x.Id == kitapID).FirstOrDefault();
 
                     kitap.kitap_adi = model.kitap_adi;
                     kitap.yazar = model.yazar;
@@ -132,11 +132,13 @@ namespace kutuphane_otomasyou.Controllers
                     else
                     {
                         TempData["bos"] = "bos";
+                        return View(kitap);
                     }
                 }
                 else
                 {
                     TempData["bos"] = "bos";
+                    return View(kitap);
                 }
 
                 return RedirectToAction("sil", "EkleSil");
