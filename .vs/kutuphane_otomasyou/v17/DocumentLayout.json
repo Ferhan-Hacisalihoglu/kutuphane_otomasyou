@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Projects\\C#\\kutuphane_otomasyou\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{43AE6D20-19B4-4F60-803E-49582E193CB5}|kutuphane_otomasyou\\kutuphane_otomasyou.csproj|c:\\projects\\c#\\kutuphane_otomasyou\\kutuphane_otomasyou\\views\\eklesil\\duzenle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{43AE6D20-19B4-4F60-803E-49582E193CB5}|kutuphane_otomasyou\\kutuphane_otomasyou.csproj|solutionrelative:kutuphane_otomasyou\\views\\eklesil\\duzenle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{43AE6D20-19B4-4F60-803E-49582E193CB5}|kutuphane_otomasyou\\kutuphane_otomasyou.csproj|C:\\Projects\\C#\\kutuphane_otomasyou\\kutuphane_otomasyou\\views\\eklesil\\sil.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{43AE6D20-19B4-4F60-803E-49582E193CB5}|kutuphane_otomasyou\\kutuphane_otomasyou.csproj|solutionrelative:kutuphane_otomasyou\\views\\eklesil\\sil.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43AE6D20-19B4-4F60-803E-49582E193CB5}|kutuphane_otomasyou\\kutuphane_otomasyou.csproj|c:\\projects\\c#\\kutuphane_otomasyou\\kutuphane_otomasyou\\views\\eklesil\\duzenle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{43AE6D20-19B4-4F60-803E-49582E193CB5}|kutuphane_otomasyou\\kutuphane_otomasyou.csproj|solutionrelative:kutuphane_otomasyou\\views\\eklesil\\duzenle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{43AE6D20-19B4-4F60-803E-49582E193CB5}|kutuphane_otomasyou\\kutuphane_otomasyou.csproj|C:\\Projects\\C#\\kutuphane_otomasyou\\kutuphane_otomasyou\\controllers\\eklesilcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -146,11 +146,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "duzenle.cshtml",
               "DocumentMoniker": "C:\\Projects\\C#\\kutuphane_otomasyou\\kutuphane_otomasyou\\Views\\EkleSil\\duzenle.cshtml",
               "RelativeDocumentMoniker": "kutuphane_otomasyou\\Views\\EkleSil\\duzenle.cshtml",
@@ -163,13 +163,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "sil.cshtml",
               "DocumentMoniker": "C:\\Projects\\C#\\kutuphane_otomasyou\\kutuphane_otomasyou\\Views\\EkleSil\\sil.cshtml",
               "RelativeDocumentMoniker": "kutuphane_otomasyou\\Views\\EkleSil\\sil.cshtml",
               "ToolTip": "C:\\Projects\\C#\\kutuphane_otomasyou\\kutuphane_otomasyou\\Views\\EkleSil\\sil.cshtml",
               "RelativeToolTip": "kutuphane_otomasyou\\Views\\EkleSil\\sil.cshtml",
-              "ViewState": "AQIAACMAAAAAAAAAAAAAADoAAABbAAAA",
+              "ViewState": "AQIAACMAAAAAAAAAAAAAADoAAABmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-05-02T10:18:02.05Z",
               "EditorCaption": ""
@@ -184,8 +184,7 @@
               "RelativeToolTip": "kutuphane_otomasyou\\Controllers\\EkleSilController.cs",
               "ViewState": "AQIAADoAAAAAAAAAAAAqwFYAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-30T18:02:27.155Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-30T18:02:27.155Z"
             },
             {
               "$type": "Document",
@@ -197,8 +196,7 @@
               "RelativeToolTip": "kutuphane_otomasyou\\Models\\table\\CezaliKisiler.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T13:20:13.846Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-14T13:20:13.846Z"
             },
             {
               "$type": "Document",
@@ -210,8 +208,7 @@
               "RelativeToolTip": "kutuphane_otomasyou\\Controllers\\ProfilController.cs",
               "ViewState": "AQIAAA0AAAAAAAAAAAAuwDcAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-27T09:49:05.255Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-27T09:49:05.255Z"
             },
             {
               "$type": "Document",
@@ -283,8 +280,7 @@
               "RelativeToolTip": "kutuphane_otomasyou\\Models\\table\\kisi.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAAAABMAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-12T14:52:47.064Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-12T14:52:47.064Z"
             },
             {
               "$type": "Document",
