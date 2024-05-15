@@ -56,7 +56,7 @@
                         <form method="post" asp-controller="Kitap" asp-action="Sil">
                             <input type="hidden" name="kitapId" value="@kitap.Id" />
                             @Html.ActionLink("Sil", "sil", "EkleSil", new { Kitapismi = kitap.kitap_adi }, new { @class = "btn btn-danger" })
-                            @Html.ActionLink("Düzenle", "duzenle", "EkleSil", new { Kitapismi = kitap.kitap_adi }, new { @class = "btn btn-warning" , @style = "color: white;" })
+                            @Html.ActionLink("Düzenle", "duzenle", "EkleSil", new { kitapID = kitap.Id }, new { @class = "btn btn-warning" , @style = "color: white;" })
 
 
                         </form>
