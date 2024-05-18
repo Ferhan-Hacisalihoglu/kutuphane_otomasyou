@@ -70,7 +70,14 @@
                 }
                 @if (@Session["gizli"] != null)
                 {
+                    <li class="nav-item">
 
+                        @Html.ActionLink("Kitap Türü Ekle", "kitapTuruEkle", "KitapTur", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+
+                        @Html.ActionLink("Kitap Türü Sil", "TurSil", "KitapTur", new { area = "" }, new { @class = "nav-link" })
+                    </li>
                     <li class="nav-item">
 
                         @Html.ActionLink("Kitap Ekle", "ekle", "EkleSil", new { area = "" }, new { @class = "nav-link" })
@@ -80,8 +87,12 @@
                         @Html.ActionLink("Kitap Düzenle", "sil", "EkleSil", new { area = "" }, new { @class = "nav-link" })
                     </li>
                     <li class="nav-item">
+
+                        @Html.ActionLink("Verilen Kitaplar", "alınanKitaplar", "EkleSil", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
                         @Html.ActionLink("Ban", "cezaliKisiler", "EkleSil", new { area = "" }, new { @class = "nav-link" })
-                       
+
                     </li>
                     <li class="nav-item">
 

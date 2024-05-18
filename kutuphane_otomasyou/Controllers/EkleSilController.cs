@@ -16,20 +16,32 @@ namespace kutuphane_otomasyou.Controllers
         // GET: EkleSil,
         //[HttpPost]
         [Authorize]
-        public ActionResult ekle(string kitap_adi, string yazar, string turu, string ozet, int? sayfa_sayisi, string resimi, int? yili)
+        public ActionResult ekle(string kitap_adi, string yazar, int? turuId, string ozet, int? sayfa_sayisi, string resimi, int? yili)
         {
             if (Session["gizli"] != null)
             {
-                if (!string.IsNullOrEmpty(kitap_adi) && !string.IsNullOrEmpty(yazar) && !string.IsNullOrEmpty(turu) && !string.IsNullOrEmpty(ozet) && !string.IsNullOrEmpty(resimi) && sayfa_sayisi.HasValue && yili.HasValue)
+                databaseContextcs db = new databaseContextcs();
+
+                if (TempData["kitapTuru"] == null)
+                {
+                    List<SelectListItem> turler = (from x in db.kitapTuru.ToList()
+                                                    select new SelectListItem()
+                                                    {
+                                                        Text = x.tur_adi,
+                                                        Value = x.Id.ToString()
+                                                    }).ToList();
+                    TempData["kitapTuru"] = turler;
+                }
+
+                if (!string.IsNullOrEmpty(kitap_adi) && !string.IsNullOrEmpty(yazar) && turuId.HasValue && !string.IsNullOrEmpty(ozet) && !string.IsNullOrEmpty(resimi) && sayfa_sayisi.HasValue && yili.HasValue)
                 {
                     if (yili.Value > 0 && sayfa_sayisi.Value > 0)
                     {
-                        databaseContextcs db = new databaseContextcs();
-                        var yeni_kitap = new Kitap
+                        Kitap yeni_kitap = new Kitap
                         {
                             kitap_adi = kitap_adi,
                             yazar = yazar,
-                            turu = turu,
+                            turuId = turuId.Value,
                             ozet = ozet,
                             resimi = resimi,
                             yili = yili.Value,
@@ -43,7 +55,7 @@ namespace kutuphane_otomasyou.Controllers
                     }
 
                 }
-                if (!string.IsNullOrEmpty(kitap_adi) || !string.IsNullOrEmpty(yazar) || !string.IsNullOrEmpty(turu) || !string.IsNullOrEmpty(ozet) || !string.IsNullOrEmpty(resimi) || sayfa_sayisi.HasValue || yili.HasValue)
+                if (!string.IsNullOrEmpty(kitap_adi) || !string.IsNullOrEmpty(yazar) || turuId.HasValue || !string.IsNullOrEmpty(ozet) || !string.IsNullOrEmpty(resimi) || sayfa_sayisi.HasValue || yili.HasValue)
                 {
                     TempData["bos"] = "bos";
                     return View(); // Metodu tamamlayan dönüş ifadesi
@@ -55,6 +67,7 @@ namespace kutuphane_otomasyou.Controllers
                 return RedirectToAction("Home", "Home");
             }
         }
+
         [Authorize]
         public ActionResult sil(string Kitapismi)
         {
@@ -83,16 +96,43 @@ namespace kutuphane_otomasyou.Controllers
 
         }
 
+        [Authorize]
+        public ActionResult alınanKitaplar()
+        {
+            if (Session["gizli"] != null)
+            {
+                databaseContextcs db = new databaseContextcs();
+                List<AlinanKitaplar> kitaplistesi = db.AlinanKitapTaplosu.ToList();
+                return View(kitaplistesi);
+            }
+            else
+            {
+                return RedirectToAction("Home", "Home");
+            }
+
+        }
+
         [Authorize,HttpGet]
         public ActionResult duzenle(int? kitapID)
         {
             if (Session["gizli"] != null)
             {
+                databaseContextcs db = new databaseContextcs();
+                if (TempData["kitapTuru"] == null)
+                {
+                    List<SelectListItem> turler = (from x in db.kitapTuru.ToList()
+                                                   select new SelectListItem()
+                                                   {
+                                                       Text = x.tur_adi,
+                                                       Value = x.Id.ToString()
+                                                   }).ToList();
+                    TempData["kitapTuru"] = turler;
+                }
+
                 Kitap kitap = null;
 
                 if (kitapID != null)
                 {
-                    databaseContextcs db = new databaseContextcs();
                     kitap = db.kitaptablosu.Where(x => x.Id == kitapID).FirstOrDefault();
                 }
 
@@ -109,17 +149,28 @@ namespace kutuphane_otomasyou.Controllers
         {
             if (Session["gizli"] != null)
             {
-                Kitap kitap = null;
+                databaseContextcs db = new databaseContextcs();
+                if (TempData["kitapTuru"] == null)
+                {
+                    List<SelectListItem> turler = (from x in db.kitapTuru.ToList()
+                                                   select new SelectListItem()
+                                                   {
+                                                       Text = x.tur_adi,
+                                                       Value = x.Id.ToString()
+                                                   }).ToList();
+                    TempData["kitapTuru"] = turler;
+                }
+
+                Kitap kitap = null ;
 
                 if (kitapID != null && model != null)
                 {
-                    databaseContextcs db = new databaseContextcs();
                     kitap = db.kitaptablosu.Where(x => x.Id == kitapID).FirstOrDefault();
 
                     kitap.kitap_adi = model.kitap_adi;
                     kitap.yazar = model.yazar;
                     kitap.ozet = model.ozet;
-                    kitap.turu = model.turu;
+                    kitap.turuId = model.turuId;
                     kitap.resimi = model.resimi;
                     kitap.sayfa_sayisi = model.sayfa_sayisi;
                     kitap.yili = model.yili;
@@ -151,9 +202,9 @@ namespace kutuphane_otomasyou.Controllers
 
         [Authorize]
         public ActionResult cezaliKisiler(string kisiIsmi)
-        {if (Session["gizli"] != null) { 
-            databaseContextcs db = new databaseContextcs();
-            List<kisi> kisiler = db.kisitablosu.ToList();
+        {if (Session["gizli"] != null) {
+                databaseContextcs db = new databaseContextcs();
+                List<kisi> kisiler = db.kisitablosu.ToList();
             if (kisiIsmi != null)
             {
                 kisi kisiSil = db.kisitablosu.Where(x => x.ad == kisiIsmi).FirstOrDefault();
@@ -169,7 +220,7 @@ namespace kutuphane_otomasyou.Controllers
                     {
                         kitap_adi = kitap.kitap_adi,
                         yazar = kitap.yazar,
-                        turu = kitap.turu,
+                        turuId = kitap.turuId,
                         ozet = kitap.ozet,
                         resimi = kitap.resimi,
                         yili = kitap.yili,
@@ -226,10 +277,13 @@ namespace kutuphane_otomasyou.Controllers
                 int count2 = db.CezaliKisilertablosu.Count();
                 int count3 = db.kitaptablosu.Count();
                 int count4 = db.AlinanKitapTaplosu.Count();
+                int count5 = db.kitapTuru.Count();
                 TempData["kisi sayisi"] = count.ToString();
                 TempData["Cezali Kisiler sayisi"] = count2.ToString();
-                TempData["kitap sayisi"] = count3.ToString();
+                TempData["kitap sayisi"] = (count3+ count4).ToString();
                 TempData["Alinan Kitap sayisi"] = count4.ToString();
+                TempData["Kitap Turu sayisi"] = count5.ToString();
+                TempData["kitapliktaki kitap sayisi"] = count3.ToString();
 
                 return View();
             }

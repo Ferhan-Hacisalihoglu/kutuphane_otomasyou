@@ -1,15 +1,9 @@
-﻿@model List<kutuphane_otomasyou.Models.table.kitaplar.Kitap>
+﻿@model List<kutuphane_otomasyou.Models.table.kitaplar.KitapTuru>
 @using kutuphane_otomasyou.Models.table.kitaplar
 
-
 @{
-    ViewBag.Title = "sil";
+    ViewBag.Title = "TurSil";
 }
-
-
-
-
-
 
 
 <!doctype html>
@@ -37,31 +31,34 @@
 <body>
 
 
-  
+
     <table class="table table-striped">
         <thead>
             <tr>
-                <th scope="col">Kitap Adı</th>
-                <th scope="col">Yazar</th>
+                <th scope="col">Kitap Turu Adı</th>
                 <th scope="col">Sil veya Düzenle</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (Kitap kitap in Model)
+            @foreach (KitapTuru tur in Model)
             {
                 <tr>
-                    <td>@kitap.kitap_adi</td>
-                    <td>@kitap.yazar</td>
+                    <td>@tur.tur_adi</td>
                     <td>
                         <form method="post" asp-controller="Kitap" asp-action="Sil">
-                            <input type="hidden" name="kitapId" value="@kitap.Id" />
-                            @Html.ActionLink("Sil", "sil", "EkleSil", new { Kitapismi = kitap.kitap_adi }, new { @class = "btn btn-danger" })
-                            @Html.ActionLink("Düzenle", "duzenle", "EkleSil", new { kitapID = kitap.Id }, new { @class = "btn btn-warning" , @style = "color: white;" })
+                            <input type="hidden" name="kitapId" value="@tur.Id" />
+                            @Html.ActionLink("Sil", "TurSil", "KitapTur", new { TurId = tur.Id }, new { @class = "btn btn-danger" })
+                            @Html.ActionLink("Düzenle", "TurDuzenle", "KitapTur", new { TurId = tur.Id }, new { @class = "btn btn-warning", @style = "color: white;" })
 
 
                         </form>
                     </td>
                 </tr>
+            }
+
+            @if (ViewBag.hata != null)
+            {
+                <p style="color: red;text-align:center">@ViewBag.hata </p>
             }
         </tbody>
     </table>
@@ -86,3 +83,4 @@
         < p > Model boş.</ p >
     }*@
 </html>
+

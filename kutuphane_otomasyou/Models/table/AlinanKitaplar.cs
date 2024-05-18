@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using kutuphane_otomasyou.Models.table.kitaplar;
 
 namespace kutuphane_otomasyou.Models.table
 {
@@ -24,8 +25,8 @@ namespace kutuphane_otomasyou.Models.table
         public string yazar { get; set; }
 
 
-        [StringLength(30), Required]
-        public string turu { get; set; }
+        [Required]
+        public int turuId { get; set; }
 
 
 

@@ -39,7 +39,8 @@
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Türü</span>
-                    @Html.TextBoxFor(x => x.turu, new { @class = "form-control", @maxlength = "30" })
+                    @Html.DropDownListFor(x => x.turuId, (List<SelectListItem>)TempData["kitapTuru"], new { @class = "from-control" , style = "width:240px;" , @Name="turuId" })
+                    @*@Html.TextBoxFor(x => x.turu, new { @class = "form-control", @maxlength = "30" })*@
                 </div>
 
                 <div class="input-group mb-3">

@@ -135,6 +135,7 @@
     <Compile Include="Controllers\iletisimController.cs" />
     <Compile Include="Controllers\kitaplarController.cs" />
     <Compile Include="Controllers\kitaplarimController.cs" />
+    <Compile Include="Controllers\KitapTurController.cs" />
     <Compile Include="Controllers\ProfilController.cs" />
     <Compile Include="Controllers\SharedController.cs" />
     <Compile Include="Global.asax.cs">
@@ -146,6 +147,7 @@
     <Compile Include="Models\table\CezaliKisiler.cs" />
     <Compile Include="Models\table\kisi.cs" />
     <Compile Include="Models\table\Kitap.cs" />
+    <Compile Include="Models\table\KitapTuru.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -230,6 +232,10 @@
     <Content Include="Views\EkleSil\cezaliKisiler.cshtml" />
     <Content Include="Views\EkleSil\admin_paneli.cshtml" />
     <Content Include="Views\EkleSil\duzenle.cshtml" />
+    <Content Include="Views\EkleSil\alınanKitaplar.cshtml" />
+    <Content Include="Views\KitapTur\kitapTuruEkle.cshtml" />
+    <Content Include="Views\KitapTur\TurSil.cshtml" />
+    <Content Include="Views\KitapTur\TurDuzenle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

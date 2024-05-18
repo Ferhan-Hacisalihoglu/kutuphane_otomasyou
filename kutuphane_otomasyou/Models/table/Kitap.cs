@@ -23,8 +23,8 @@ namespace kutuphane_otomasyou.Models.table.kitaplar
         public string yazar { get; set; }
 
 
-        [StringLength(30), Required]
-        public string turu { get; set; }
+        [Required]
+        public int turuId { get; set; }
 
 
 
@@ -44,7 +44,5 @@ namespace kutuphane_otomasyou.Models.table.kitaplar
         public int yili { get; set; }
 
         public virtual List<kisi>  kisier { get; set; }
-
-
     }
 }

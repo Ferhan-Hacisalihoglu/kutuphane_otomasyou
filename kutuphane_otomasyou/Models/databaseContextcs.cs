@@ -17,6 +17,7 @@ namespace kutuphane_otomasyou.Models
         public DbSet<CezaliKisiler> CezaliKisilertablosu { get; set; }
         public DbSet<Kitap>kitaptablosu { get; set; }
         public DbSet<AlinanKitaplar> AlinanKitapTaplosu { get; set; }
+        public DbSet<KitapTuru> kitapTuru { get; set; }
 
 
     }

@@ -1,9 +1,9 @@
-﻿@model List<kutuphane_otomasyou.Models.table.kitaplar.Kitap>
+﻿@model List< kutuphane_otomasyou.Models.table.AlinanKitaplar>
 @using kutuphane_otomasyou.Models.table.kitaplar
 
 
 @{
-    ViewBag.Title = "sil";
+    ViewBag.Title = "alınanKitaplar";
 }
 
 
@@ -37,30 +37,22 @@
 <body>
 
 
-  
+
     <table class="table table-striped">
         <thead>
             <tr>
                 <th scope="col">Kitap Adı</th>
                 <th scope="col">Yazar</th>
-                <th scope="col">Sil veya Düzenle</th>
+                <th scope="col">Teslim Tarihi</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (Kitap kitap in Model)
+            @foreach (var kitap in Model)
             {
                 <tr>
                     <td>@kitap.kitap_adi</td>
                     <td>@kitap.yazar</td>
-                    <td>
-                        <form method="post" asp-controller="Kitap" asp-action="Sil">
-                            <input type="hidden" name="kitapId" value="@kitap.Id" />
-                            @Html.ActionLink("Sil", "sil", "EkleSil", new { Kitapismi = kitap.kitap_adi }, new { @class = "btn btn-danger" })
-                            @Html.ActionLink("Düzenle", "duzenle", "EkleSil", new { kitapID = kitap.Id }, new { @class = "btn btn-warning" , @style = "color: white;" })
-
-
-                        </form>
-                    </td>
+                    <td>teslim tarihi</td>
                 </tr>
             }
         </tbody>

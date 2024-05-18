@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using kutuphane_otomasyou.Models.table.kisiler;
 using Microsoft.Ajax.Utilities;
+using System.Drawing;
 
 namespace kutuphane_otomasyou.Controllers
 {
@@ -78,7 +79,7 @@ namespace kutuphane_otomasyou.Controllers
                 {
                     kitap_adi = kitapBilgisi.kitap_adi,
                     yazar = kitapBilgisi.yazar,
-                    turu = kitapBilgisi.turu,
+                    turuId = kitapBilgisi.turuId,
                     ozet = kitapBilgisi.ozet,
                     resimi = kitapBilgisi.resimi,
                     yili = kitapBilgisi.yili,
@@ -104,21 +105,20 @@ namespace kutuphane_otomasyou.Controllers
 
             return RedirectToAction("kitaplar", "kitaplar");
         }
-      
+
         public ActionResult kitapDetaylari(string Kitapismi)
         {
 
             databaseContextcs db = new databaseContextcs();
-            var kisi = db.kitaptablosu.FirstOrDefault(x => x.kitap_adi == Kitapismi);
+            Kitap kitap = db.kitaptablosu.FirstOrDefault(x => x.kitap_adi == Kitapismi);
 
-
-            TempData["yazar"] = kisi.yazar;
-            TempData["kitap_adi"] = kisi.kitap_adi;
-            TempData["turu"] = kisi.turu;
-            TempData["ozet"] = kisi.ozet;
-            TempData["resimi"] = kisi.resimi;
-            TempData["sayfa_sayisi"] = kisi.sayfa_sayisi;
-            TempData["yili"] = kisi.yili;
+            TempData["yazar"] = kitap.yazar;
+            TempData["kitap_adi"] = kitap.kitap_adi;
+            TempData["turu"] = db.kitapTuru.FirstOrDefault(x => x.Id == kitap.turuId).tur_adi;
+            TempData["ozet"] = kitap.ozet;
+            TempData["resimi"] = kitap.resimi;
+            TempData["sayfa_sayisi"] = kitap.sayfa_sayisi;
+            TempData["yili"] = kitap.yili;
 
 
 
@@ -128,16 +128,16 @@ namespace kutuphane_otomasyou.Controllers
         {
 
             databaseContextcs db = new databaseContextcs();
-            var kisi = db.AlinanKitapTaplosu.FirstOrDefault(x => x.kitap_adi == Kitapismi);
+            AlinanKitaplar kitap = db.AlinanKitapTaplosu.FirstOrDefault(x => x.kitap_adi == Kitapismi);
 
 
-            TempData["yazar"] = kisi.yazar;
-            TempData["kitap_adi"] = kisi.kitap_adi;
-            TempData["turu"] = kisi.turu;
-            TempData["ozet"] = kisi.ozet;
-            TempData["resimi"] = kisi.resimi;
-            TempData["sayfa_sayisi"] = kisi.sayfa_sayisi;
-            TempData["yili"] = kisi.yili;
+            TempData["yazar"] = kitap.yazar;
+            TempData["kitap_adi"] = kitap.kitap_adi;
+            TempData["turu"] = db.kitapTuru.FirstOrDefault(x => x.Id == kitap.turuId).tur_adi;
+            TempData["ozet"] = kitap.ozet;
+            TempData["resimi"] = kitap.resimi;
+            TempData["sayfa_sayisi"] = kitap.sayfa_sayisi;
+            TempData["yili"] = kitap.yili;
 
 
 
@@ -156,7 +156,7 @@ namespace kutuphane_otomasyou.Controllers
                 {
                     kitap_adi = kitaplar.kitap_adi,
                     yazar = kitaplar.yazar,
-                    turu = kitaplar.turu,
+                    turuId = kitaplar.turuId,
                     ozet = kitaplar.ozet,
                     resimi = kitaplar.resimi,
                     yili = kitaplar.yili,
